@@ -2,15 +2,73 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>wall</title>
-  <style>
-    html, body { margin:0; height:100%; background:#000; overflow:hidden; }
-    canvas { display:block; width:100vw; height:100vh; }
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Status</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="./style.css" />
 </head>
+
 <body>
-  <canvas id="c"></canvas>
-  <script src="./app.js"></script>
+  <div id="bg">
+    <canvas id="dust"></canvas>
+    <div id="scanlines"></div>
+    <div id="vignette"></div>
+  </div>
+
+  <main class="wrap">
+    <header class="top">
+      <div class="brand">
+        <div class="dot"></div>
+        <div class="title">monoton / status</div>
+      </div>
+
+      <div class="clock">
+        <div id="time" class="time">--:--</div>
+        <div id="date" class="date">---</div>
+      </div>
+    </header>
+
+    <section class="grid">
+      <article class="card weather">
+        <div class="card-h">
+          <div class="h">Weather</div>
+          <div class="sub" id="weather-sub">loading…</div>
+        </div>
+        <div class="weather-strip" id="weather-strip"></div>
+      </article>
+
+      <article class="card calendar">
+        <div class="card-h">
+          <div class="h">Calendar</div>
+          <div class="sub" id="cal-sub">loading…</div>
+        </div>
+        <div class="events" id="events"></div>
+      </article>
+
+      <article class="card ambient">
+        <div class="card-h">
+          <div class="h">Signal</div>
+          <div class="sub" id="sig-sub">keys: [W] weather  [C] calendar  [A] ambient  [R] refresh</div>
+        </div>
+        <div class="ambient-body">
+          <div id="ambient-line" class="ambient-line">…</div>
+          <div class="meter">
+            <div class="meter-bar" id="meter-bar"></div>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <footer class="foot">
+      <div class="hint" id="hint">tip: press <b>F</b> for full-screen (or run kiosk)</div>
+      <div class="status" id="status">ok</div>
+    </footer>
+  </main>
+
+  <script src="./main.js"></script>
 </body>
 </html>
