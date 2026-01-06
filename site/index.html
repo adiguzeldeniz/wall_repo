@@ -32,27 +32,21 @@
       </div>
     </header>
 
-    <section class="grid">
-      <article class="card weather">
-        <div class="card-h">
-          <div class="h">Weather</div>
-          <div class="sub" id="weather-sub">loading…</div>
-        </div>
-        <div class="weather-strip" id="weather-strip"></div>
-      </article>
+    <!-- 7-day strip (weather + calendar) -->
+    <section class="week">
+      <div class="week-head">
+        <div class="h">Next 7 days</div>
+        <div class="sub" id="week-sub">loading…</div>
+      </div>
+      <div class="week-strip" id="week-strip"></div>
+    </section>
 
-      <article class="card calendar">
-        <div class="card-h">
-          <div class="h">Calendar</div>
-          <div class="sub" id="cal-sub">loading…</div>
-        </div>
-        <div class="events" id="events"></div>
-      </article>
-
+    <!-- Calm ambient card -->
+    <section class="ambient-only">
       <article class="card ambient">
         <div class="card-h">
           <div class="h">Signal</div>
-          <div class="sub" id="sig-sub">keys: [W] weather  [C] calendar  [A] ambient  [R] refresh</div>
+          <div class="sub" id="sig-sub">keys: [R] refresh  [F] full-screen</div>
         </div>
         <div class="ambient-body">
           <div id="ambient-line" class="ambient-line">…</div>
