@@ -35,7 +35,6 @@
   const elAmbient = $("ambient-line");
   const elStatus = $("status");
   const elHint = $("hint");
-  const elMeter = $("meter-bar");
 
   // -----------------------
   // Utilities
@@ -109,16 +108,11 @@
     elAmbient.textContent = sentences[sIdx];
   }
 
-  function randomMeter() {
-    const v = 12 + Math.random() * 78;
-    elMeter.style.width = `${v}%`;
-  }
+
 
   loadSentences().then(() => {
     elAmbient.textContent = sentences[0] ?? "…";
-    randomMeter();
     setInterval(() => { nextSentence(); }, 6500);
-    setInterval(() => { randomMeter(); }, 220);
   });
 
   // -----------------------
